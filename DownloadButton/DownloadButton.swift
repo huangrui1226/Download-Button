@@ -10,7 +10,7 @@ import UIKit
 
 class DownloadButton: UIButton {
     
-    var lineToPointDuration = 0.5                           // 箭头竖线转换为点
+    var lineToPointDuration = 0.5
     
     var isComplete: Bool = false
     
@@ -156,7 +156,7 @@ class DownloadButton: UIButton {
 extension DownloadButton: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if anim == checkMarkLayer.animation(forKey: "group") {
+        if anim == verticalLineLayer.animation(forKey: "group") {
             checkMarkLayer.removeAllAnimations()
             
             let path = UIBezierPath()
@@ -208,7 +208,6 @@ extension DownloadButton {
         keyFrameAnimation.fillMode = kCAFillModeForwards
         
         let groupAnimation = CAAnimationGroup()
-        groupAnimation.delegate = self
         groupAnimation.animations = [keyFrameAnimation]
         groupAnimation.isRemovedOnCompletion = false
         groupAnimation.fillMode = kCAFillModeForwards
@@ -226,7 +225,6 @@ extension DownloadButton {
         keyframeAnimation.fillMode = kCAFillModeForwards
         
         let sprintAnimation = CASpringAnimation(keyPath: "position.y")
-        sprintAnimation.delegate = self
         sprintAnimation.damping = 10
         sprintAnimation.toValue = -(circleSideLength / 2 + arrowSideLength * 0.1)
         sprintAnimation.duration = sprintAnimation.settlingDuration
@@ -235,6 +233,7 @@ extension DownloadButton {
         sprintAnimation.fillMode = kCAFillModeForwards
         
         let groupAnimation = CAAnimationGroup()
+        groupAnimation.delegate = self;
         groupAnimation.animations = [keyframeAnimation, sprintAnimation]
         groupAnimation.isRemovedOnCompletion = false
         groupAnimation.fillMode = kCAFillModeForwards
@@ -262,3 +261,4 @@ extension DownloadButton {
         checkMarkLayer.add(animation, forKey: "finish")
     }
 }
+
