@@ -1,2 +1,2 @@
 # Download-Button
-![image](https://github.com/MagicBlind/Download-Button/blob/master/GIFName.gif )   
+![image](https://github.com/MagicBlind/Download-Button/sample.gif )   
