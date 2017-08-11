@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         length = view.frame.size.width / 2
-        downloadButton()
+//        downloadButton()
         loadingView()
     }
     
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     func loadingView() {
         
         let waveView = LoadingView(frame: CGRect(x: length, y: 20, width: length, height: length))
+        waveView.center = view.center
         view.addSubview(waveView)
     }
 }
