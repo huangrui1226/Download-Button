@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DownloadButton.xcscheme</key>
+		<key>Animations.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04A96A3E1F3B156C006A5E31</key>
+		<key>0420CBD01F3A990400552C82</key>
 		<dict>
 			<key>primary</key>
 			<true/>

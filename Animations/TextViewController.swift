@@ -1,29 +1,25 @@
 //
-//  ViewController.swift
-//  DownloadButton
+//  TextViewController.swift
+//  Animations
 //
-//  Created by 黄瑞 on 2017/8/9.
+//  Created by 黄瑞 on 2017/8/10.
 //  Copyright © 2017年 黄瑞. All rights reserved.
 //
 
 import UIKit
+import CoreText
 
-class ViewController: UIViewController {
+class TextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = DownloadButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        button.center = self.view.center
-        self.view.addSubview(button)
-        
+        print("Core text version is \(CTGetCoreTextVersion())")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-

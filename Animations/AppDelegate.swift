@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DownloadButton
+//  Animations
 //
 //  Created by 黄瑞 on 2017/8/9.
 //  Copyright © 2017年 黄瑞. All rights reserved.

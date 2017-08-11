@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04A96A3E1F3B156C006A5E31"
-               BuildableName = "DownloadButton.app"
-               BlueprintName = "DownloadButton"
-               ReferencedContainer = "container:DownloadButton.xcodeproj">
+               BlueprintIdentifier = "0420CBD01F3A990400552C82"
+               BuildableName = "Animations.app"
+               BlueprintName = "Animations"
+               ReferencedContainer = "container:Animations.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04A96A3E1F3B156C006A5E31"
-            BuildableName = "DownloadButton.app"
-            BlueprintName = "DownloadButton"
-            ReferencedContainer = "container:DownloadButton.xcodeproj">
+            BlueprintIdentifier = "0420CBD01F3A990400552C82"
+            BuildableName = "Animations.app"
+            BlueprintName = "Animations"
+            ReferencedContainer = "container:Animations.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04A96A3E1F3B156C006A5E31"
-            BuildableName = "DownloadButton.app"
-            BlueprintName = "DownloadButton"
-            ReferencedContainer = "container:DownloadButton.xcodeproj">
+            BlueprintIdentifier = "0420CBD01F3A990400552C82"
+            BuildableName = "Animations.app"
+            BlueprintName = "Animations"
+            ReferencedContainer = "container:Animations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04A96A3E1F3B156C006A5E31"
-            BuildableName = "DownloadButton.app"
-            BlueprintName = "DownloadButton"
-            ReferencedContainer = "container:DownloadButton.xcodeproj">
+            BlueprintIdentifier = "0420CBD01F3A990400552C82"
+            BuildableName = "Animations.app"
+            BlueprintName = "Animations"
+            ReferencedContainer = "container:Animations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

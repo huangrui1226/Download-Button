@@ -261,4 +261,3 @@ extension DownloadButton {
         checkMarkLayer.add(animation, forKey: "finish")
     }
 }
-
