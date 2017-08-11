@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        downloadButton()
-//        loadingView()
+//        downloadButton()
+        loadingView()
     }
 
     @objc func sliderValueChange(_ sender: UISlider) {

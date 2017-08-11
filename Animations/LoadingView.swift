@@ -21,10 +21,9 @@ class LoadingView: UIView {
     var waveSpeed: CGFloat = 3                                        // 波浪平移速度
     var waveTopPostition: CGFloat = 0.0                               // 当前波峰位置，波谷位置距离波峰控件宽度的一半
     var waveLayer = CAShapeLayer()
+    var gradientLayer = CAGradientLayer()
     
     var bubbleLayers: [CAShapeLayer] = []                             // 存放泡泡的layer数组
-    
-    var gradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -98,20 +97,32 @@ class LoadingView: UIView {
     
     // 添加起泡
     func addBubble() {
+        
+        if progress >= 0.8 || progress <= 0.0 {
+            return
+        }
+        
+        let bubbleMinSize: CGFloat = 4
+        let bubbleMaxSize: CGFloat = 4 + 12 * progress
+        let bubbleSize: CGFloat = bubbleMinSize + (bubbleMaxSize - bubbleMinSize) * (CGFloat(arc4random() % 100) / 100.0) // 范围 4 ～ 12
         let bubble = UIBezierPath()
-        let bubbleInterval: CGFloat = width / 32
+        let bubbleInterval: CGFloat = width / 20
         
         let radiusSquare = radius * radius
-        let startX = radius - CGFloat(sqrt(radiusSquare - fabs(radius - radius * progress) * fabs(radius - radius * progress)))
-        let horizontalBubbles = UInt32(sqrt(radiusSquare - fabs(radius - radius * progress) * fabs(radius - radius * progress)) * 2 / bubbleInterval)
+        let startX = radius - CGFloat(sqrt(radiusSquare - fabs(radius * (1 - 2 * progress)) * fabs(radius * (1 - 2 * progress))))
+        
+        if radius - startX < bubbleMaxSize * 1.2 { // 距离小于泡泡的最大宽度，则不出现泡泡
+            return
+        }
+        
+        let horizontalBubbles = UInt32(sqrt(radiusSquare - fabs(radius * (1 - 2 * progress)) * fabs(radius * (1 - 2 * progress))) * 2 / bubbleInterval)
 
         let center = CGPoint(x: startX + CGFloat(arc4random() % horizontalBubbles) * bubbleInterval + bubbleInterval / 2, y: (1 - progress + waveScale) * height)
-        bubble.addArc(withCenter: center, radius: 4, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+        bubble.addArc(withCenter: center, radius: bubbleSize, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         bubble.fill()
         
         let bubbleLayer = CAShapeLayer()
         bubbleLayers.append(bubbleLayer)
-//        bubbleLayer.backgroundColor = UIColor.init(white: 1.0, alpha: 0.2).cgColor
         bubbleLayer.frame = bounds
         bubbleLayer.path = bubble.cgPath
         bubbleLayer.fillColor = UIColor.init(red: 0.000, green: 0.500, blue: 1.000, alpha: 1.0).cgColor
@@ -126,11 +137,16 @@ class LoadingView: UIView {
             toValue = a - radius + totalHeight
         }
         
+        let positionCoe: CGFloat = (0.5 + 0.5 * (bubbleSize - bubbleMinSize) / (bubbleMaxSize - bubbleMinSize))
         let animation = CAKeyframeAnimation(keyPath: "position.y")
         animation.delegate = self
-        animation.values = [height * 0.5, height * 0.5 - toValue, height * 0.5]
+        animation.values = [
+            height * 0.5,
+            height * 0.5 - toValue * positionCoe + bubbleSize,
+            height * 0.5
+        ]
         animation.keyTimes = [0, 0.5, 1]
-        animation.duration = 1.0
+        animation.duration = TimeInterval(1.2 + 1.8 * (1 - progress))
         animation.timingFunctions = [CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)]
         animation.isRemovedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
@@ -139,9 +155,13 @@ class LoadingView: UIView {
     
     @objc func updateWave() {
         waveTopPostition += waveSpeed
+        
+        if arc4random() % 100 < 3 {
+            addBubble()
+        }
+        
         if waveTopPostition > width {
             waveTopPostition -= width
-            addBubble()
         }
         waveLayer.path = getWavePath()
         let start = NSNumber(value: Float(1 - progress - waveScale))
