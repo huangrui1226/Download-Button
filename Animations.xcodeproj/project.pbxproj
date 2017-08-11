@@ -41,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04203F951F3D867700941850 /* AnimationViews */ = {
+			isa = PBXGroup;
+			children = (
+				0434A2951F3BF6EB007AAF66 /* LoadingView.swift */,
+				0420CBE61F3A992900552C82 /* DownloadButton.swift */,
+			);
+			path = AnimationViews;
+			sourceTree = "<group>";
+		};
 		0420CBC81F3A990400552C82 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +69,14 @@
 		0420CBD31F3A990400552C82 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				04203F951F3D867700941850 /* AnimationViews */,
 				0420CBD41F3A990400552C82 /* AppDelegate.swift */,
 				0420CBD61F3A990400552C82 /* ViewController.swift */,
 				0420CBD81F3A990400552C82 /* Main.storyboard */,
 				0420CBDB1F3A990400552C82 /* Assets.xcassets */,
 				0420CBDD1F3A990400552C82 /* LaunchScreen.storyboard */,
 				0420CBE01F3A990400552C82 /* Info.plist */,
-				0420CBE61F3A992900552C82 /* DownloadButton.swift */,
 				0434A2931F3BF4A8007AAF66 /* TextViewController.swift */,
-				0434A2951F3BF6EB007AAF66 /* LoadingView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";

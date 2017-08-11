@@ -106,7 +106,7 @@ class LoadingView: UIView {
         let bubbleMaxSize: CGFloat = 4 + 12 * progress
         let bubbleSize: CGFloat = bubbleMinSize + (bubbleMaxSize - bubbleMinSize) * (CGFloat(arc4random() % 100) / 100.0) // 范围 4 ～ 12
         let bubble = UIBezierPath()
-        let bubbleInterval: CGFloat = width / 20
+        let bubbleInterval: CGFloat = (width - bubbleMaxSize * 1.2 * 2) / 20
         
         let radiusSquare = radius * radius
         let startX = radius - CGFloat(sqrt(radiusSquare - fabs(radius * (1 - 2 * progress)) * fabs(radius * (1 - 2 * progress))))
@@ -115,9 +115,9 @@ class LoadingView: UIView {
             return
         }
         
-        let horizontalBubbles = UInt32(sqrt(radiusSquare - fabs(radius * (1 - 2 * progress)) * fabs(radius * (1 - 2 * progress))) * 2 / bubbleInterval)
+        let horizontalBubbles = UInt32((sqrt(radiusSquare - fabs(radius * (1 - 2 * progress)) * fabs(radius * (1 - 2 * progress))) - 2 * bubbleMaxSize) * 2 / bubbleInterval)
 
-        let center = CGPoint(x: startX + CGFloat(arc4random() % horizontalBubbles) * bubbleInterval + bubbleInterval / 2, y: (1 - progress + waveScale) * height)
+        let center = CGPoint(x: startX + bubbleMaxSize + CGFloat(arc4random() % horizontalBubbles) * bubbleInterval + bubbleInterval / 2, y: (1 - progress + waveScale) * height)
         bubble.addArc(withCenter: center, radius: bubbleSize, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         bubble.fill()
         

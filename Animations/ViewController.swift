@@ -10,39 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var waveView: LoadingView?
+    var length: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        downloadButton()
+        length = view.frame.size.width / 2
+        downloadButton()
         loadingView()
-    }
-
-    @objc func sliderValueChange(_ sender: UISlider) {
-        waveView?.progress = CGFloat(sender.value)
     }
     
     func downloadButton() {
-        let button = DownloadButton(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        button.center = self.view.center
+        
+        let button = DownloadButton(frame: CGRect(x: 0, y: 20, width: length, height: length))
         self.view.addSubview(button)
     }
     
     func loadingView() {
         
-        let slider = UISlider(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        slider.minimumValue = 0.0
-        slider.maximumValue = 1.0
-        slider.value = 0.5
-        slider.addTarget(self, action: #selector(sliderValueChange(_:)), for: .valueChanged)
-        slider.center = CGPoint(x: view.center.x, y: view.center.y + 300)
-        view.addSubview(slider)
-
-        waveView = LoadingView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        waveView?.center = view.center
-        view.addSubview(waveView!)
+        let waveView = LoadingView(frame: CGRect(x: length, y: 20, width: length, height: length))
+        view.addSubview(waveView)
     }
 }
 
