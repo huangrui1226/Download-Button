@@ -55,7 +55,7 @@ class LoadingView: UIView {
         
         let path = UIBezierPath()
         
-        path.move(to: CGPoint(x: width, y: height))
+        path.move(to: CGPoint(x: width * 2, y: height))
         path.addLine(to: CGPoint(x: 0, y: height))
         
         for i in (0..<Int(width)).filter({$0 % 2 == 0}) {

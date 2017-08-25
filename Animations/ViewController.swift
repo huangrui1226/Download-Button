@@ -17,20 +17,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         length = view.frame.size.width / 2
-//        downloadButton()
+
+        downloadButton()
         loadingView()
     }
     
     func downloadButton() {
         
-        let button = DownloadButton(frame: CGRect(x: 0, y: 20, width: length, height: length))
+        let button = DownloadButton(frame: CGRect(x: 0, y: 0, width: length, height: length))
+        button.center = CGPoint(x: view.center.x, y: view.center.y - length / 2 - 8)
         self.view.addSubview(button)
     }
     
     func loadingView() {
         
-        let waveView = LoadingView(frame: CGRect(x: length, y: 20, width: length, height: length))
-        waveView.center = view.center
+        let waveView = LoadingView(frame: CGRect(x: 0, y: 0, width: length, height: length))
+        waveView.center = CGPoint(x: view.center.x, y: view.center.y + length / 2 + 8)
         view.addSubview(waveView)
     }
 }

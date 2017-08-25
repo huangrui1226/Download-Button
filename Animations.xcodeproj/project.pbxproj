@@ -13,8 +13,9 @@
 		0420CBDC1F3A990400552C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0420CBDB1F3A990400552C82 /* Assets.xcassets */; };
 		0420CBDF1F3A990400552C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0420CBDD1F3A990400552C82 /* LaunchScreen.storyboard */; };
 		0420CBE71F3A992900552C82 /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420CBE61F3A992900552C82 /* DownloadButton.swift */; };
-		0434A2941F3BF4A8007AAF66 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434A2931F3BF4A8007AAF66 /* TextViewController.swift */; };
 		0434A2961F3BF6EB007AAF66 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434A2951F3BF6EB007AAF66 /* LoadingView.swift */; };
+		043AC36C1F4FE10900608B8A /* RuningMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AC36B1F4FE10900608B8A /* RuningMan.swift */; };
+		043AC36E1F4FE10D00608B8A /* SportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AC36D1F4FE10D00608B8A /* SportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		0420CBDE1F3A990400552C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0420CBE01F3A990400552C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0420CBE61F3A992900552C82 /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
-		0434A2931F3BF4A8007AAF66 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		0434A2951F3BF6EB007AAF66 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		043AC36B1F4FE10900608B8A /* RuningMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuningMan.swift; sourceTree = "<group>"; };
+		043AC36D1F4FE10D00608B8A /* SportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		04203F951F3D867700941850 /* AnimationViews */ = {
 			isa = PBXGroup;
 			children = (
+				043AC36B1F4FE10900608B8A /* RuningMan.swift */,
 				0434A2951F3BF6EB007AAF66 /* LoadingView.swift */,
 				0420CBE61F3A992900552C82 /* DownloadButton.swift */,
 			);
@@ -69,6 +72,7 @@
 		0420CBD31F3A990400552C82 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				043AC36D1F4FE10D00608B8A /* SportViewController.swift */,
 				04203F951F3D867700941850 /* AnimationViews */,
 				0420CBD41F3A990400552C82 /* AppDelegate.swift */,
 				0420CBD61F3A990400552C82 /* ViewController.swift */,
@@ -76,7 +80,6 @@
 				0420CBDB1F3A990400552C82 /* Assets.xcassets */,
 				0420CBDD1F3A990400552C82 /* LaunchScreen.storyboard */,
 				0420CBE01F3A990400552C82 /* Info.plist */,
-				0434A2931F3BF4A8007AAF66 /* TextViewController.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -156,7 +159,8 @@
 				0420CBE71F3A992900552C82 /* DownloadButton.swift in Sources */,
 				0420CBD51F3A990400552C82 /* AppDelegate.swift in Sources */,
 				0434A2961F3BF6EB007AAF66 /* LoadingView.swift in Sources */,
-				0434A2941F3BF4A8007AAF66 /* TextViewController.swift in Sources */,
+				043AC36C1F4FE10900608B8A /* RuningMan.swift in Sources */,
+				043AC36E1F4FE10D00608B8A /* SportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
