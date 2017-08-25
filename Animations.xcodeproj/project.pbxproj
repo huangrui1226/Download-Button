@@ -16,6 +16,7 @@
 		0434A2961F3BF6EB007AAF66 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434A2951F3BF6EB007AAF66 /* LoadingView.swift */; };
 		043AC36C1F4FE10900608B8A /* RuningMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AC36B1F4FE10900608B8A /* RuningMan.swift */; };
 		043AC36E1F4FE10D00608B8A /* SportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AC36D1F4FE10D00608B8A /* SportViewController.swift */; };
+		043AC3701F4FE91200608B8A /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AC36F1F4FE91200608B8A /* CircleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0434A2951F3BF6EB007AAF66 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		043AC36B1F4FE10900608B8A /* RuningMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuningMan.swift; sourceTree = "<group>"; };
 		043AC36D1F4FE10D00608B8A /* SportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportViewController.swift; sourceTree = "<group>"; };
+		043AC36F1F4FE91200608B8A /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0420CBDB1F3A990400552C82 /* Assets.xcassets */,
 				0420CBDD1F3A990400552C82 /* LaunchScreen.storyboard */,
 				0420CBE01F3A990400552C82 /* Info.plist */,
+				043AC36F1F4FE91200608B8A /* CircleViewController.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043AC3701F4FE91200608B8A /* CircleViewController.swift in Sources */,
 				0420CBD71F3A990400552C82 /* ViewController.swift in Sources */,
 				0420CBE71F3A992900552C82 /* DownloadButton.swift in Sources */,
 				0420CBD51F3A990400552C82 /* AppDelegate.swift in Sources */,
