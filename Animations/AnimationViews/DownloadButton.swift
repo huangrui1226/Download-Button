@@ -37,6 +37,8 @@ class DownloadButton: UIButton {
     let dotPath = UIBezierPath()                            // 箭头竖线变成的点
     var checkMarkPath = UIBezierPath()                      // 对勾曲线
     
+    var timer: Timer?                                       // 进度圈定时器
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addTarget(self, action: #selector(startAnimation), for: .touchUpInside)
@@ -53,6 +55,10 @@ class DownloadButton: UIButton {
             setup()
         }
         
+        timer?.invalidate()
+        circleLayer.path = UIBezierPath().cgPath
+        checkMarkLayer.path = checkMarkPath.cgPath
+
         lineToPointUpAnimation()
         arrowToLineAnimation()
     }
@@ -165,7 +171,8 @@ extension DownloadButton: CAAnimationDelegate {
             path.addLine(to: CGPoint(x: buttonCenter.x + arrowSideLength * 0.4, y: buttonCenter.y + arrowSideLength * 0.1))
             checkMarkLayer.path = path.cgPath
             
-            Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+            self.progress = 0.0
+            timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
                 self.progress += 0.02
                 if self.progress >= 1.0 {
                     timer.invalidate()
